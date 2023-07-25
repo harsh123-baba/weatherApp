@@ -60,14 +60,18 @@ function Forcast(props) {
             type="text"
             className="search-bar"
             placeholder="Search any city"
-            onChange={(e) => setQuery(e.target.value)}
+            onChange={(e) => 
+              {
+                e.preventDefault();
+                setQuery(e.target.value)
+              }}
             value={query}
           />
           <div className="img-box">
             {" "}
             <img
               src="https://images.avishkaar.cc/workflow/newhp/search-white.png"
-              onClick={search}
+              onClick={()=>search(query)}
             />
           </div>
         </div>
